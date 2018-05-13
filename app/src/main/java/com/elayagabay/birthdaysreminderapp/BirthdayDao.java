@@ -13,7 +13,7 @@ import java.util.List;
 
 @Dao
 public interface BirthdayDao {
-    @Query(QueryHolder.QUERY_GET_ALL_BDAYS)
+    @Query("SELECT * FROM birthdays ORDER BY birthday DESC")
     LiveData<List<Birthday>> loadBirthdays();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

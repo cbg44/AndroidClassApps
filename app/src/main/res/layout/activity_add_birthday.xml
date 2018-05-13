@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:text="@string/happyBirthday"
-        android:textColor="@android:color/holo_orange_light"
+        android:text="Add new Birthday"
+        android:textColor="#78965d"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -22,24 +22,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="@string/bdayName"
+        android:ems="12"
+        android:hint="  Enter Full Name"
         android:inputType="textEmailAddress"
         android:textColorHighlight="@android:color/holo_orange_dark" />
-
-    <!-- TODO: replace this with DatePicker entity (slidingthing) -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <CalendarView
+        <DatePicker
             android:id="@+id/calendarView"
-            android:layout_width="269dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="260dp"
+            android:layout_height="317dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#e8cc98"
-        android:text="@string/bdayDone"
-        android:textColor="@android:color/black" />
+        android:background="#78965d"
+        android:text="ADD"
+        android:textColor="@android:color/white" />
 </LinearLayout>

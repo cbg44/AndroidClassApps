@@ -25,7 +25,7 @@ public class BirthdaysActivity  extends AppCompatActivity {
     private BirthdaysAdapter mBirthdayAdapter;
     public static Birthday bday = null;
     public static final String DRAWABLE_PATH = "../../res/drawable";
-
+    LiveData<List<Birthday>> captainsLogEntityLiveData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,6 @@ public class BirthdaysActivity  extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mBirthdayAdapter);
 
         //add some pre made birthdays for a better LAF (Look And Feel):
@@ -47,24 +46,31 @@ public class BirthdaysActivity  extends AppCompatActivity {
         //displayStoragedEntities();
 
         // Create the observer which updates the UI.
+
         final Observer<List<Birthday>> bdayObserver = new Observer<List<Birthday>>() {
+
             @Override
             public void onChanged(@Nullable List<Birthday> birthdayEntities) {
+                displayStoragedEntities();
                 if(birthdayEntities.isEmpty()){
                     Toast.makeText(BirthdaysActivity.this, R.string.nobody_has_birthday, Toast.LENGTH_LONG).show();
                 }
+
                 for(Birthday bday : birthdayEntities){
                     if(!isBdayAlreadyDisplayed(bday)){
+
                         addBdayToList(bday);
+
                         mBirthdayAdapter.notifyDataSetChanged();
+
                     }
                 }
             }
         };
 
-        LiveData<List<Birthday>> captainsLogEntityLiveData = BirthdaysDatabase.getInstance(this).readBirthdays();
+        captainsLogEntityLiveData = BirthdaysDatabase.getInstance(BirthdaysActivity.this).readBirthdays();
 
-        captainsLogEntityLiveData.observe(this, bdayObserver);
+        captainsLogEntityLiveData.observe(BirthdaysActivity.this, bdayObserver);
 
         btnAddBday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,11 +89,20 @@ public class BirthdaysActivity  extends AppCompatActivity {
         mBirthdayAdapter.notifyDataSetChanged();
     }
 
-    private int randAvatar() {
-        return R.drawable.avatar13;
+
+    private void displayStoragedEntities() {
+        LiveData<List<Birthday>> list = BirthdaysDatabase.getInstance(this).readBirthdays();
+        //Toast.makeText(BirthdayListActivity.this, "list of bdays size is : "  + list.getValue().size() , Toast.LENGTH_SHORT).show();
+
+        if(list != null){
+
+            //TODO: load all entities from db.
+//            for (BirthdayEntity birthday : list.getValue()){
+//                if(list.getValue() != null )
+//                    System.out.println(birthday);
+//            }
+        }
     }
-
-
     private boolean isBdayAlreadyDisplayed(Birthday bday) {
         for(Birthday bde : mBirthdayEntityList){
             if(bde.getId() == bday.getId()){
@@ -101,6 +116,8 @@ public class BirthdaysActivity  extends AppCompatActivity {
 
     private void addBdayToList(Birthday bday) {
         mBirthdayEntityList.add(bday);
+       // displayStoragedEntities();
+
     }
 
 

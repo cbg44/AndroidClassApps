@@ -10,23 +10,20 @@ import android.arch.persistence.room.PrimaryKey;
 
 public class Birthday {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = QueryHolder.BD_ENT_ID_FIELD_NAME)
+    @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo (name = QueryHolder.BD_ENT_NAME_FIELD_NAME)
+    @ColumnInfo (name="name")
     private String mName;
 
-    @ColumnInfo (name = QueryHolder.BD_ENT_DATE_FIELD_NAME)
+    @ColumnInfo (name="birthday")
     private String mDate;
 
-    @ColumnInfo (name = QueryHolder.BD_ENT_IMG_ID_FIELD_NAME)
-    public int mImageId;
 
 
-    public Birthday(String name, String date, int imageId) {
+    public Birthday(String name, String date) {
         setName(name);
         setDate(date);
-        setmImageId(imageId);
     }
 
     @Override
@@ -35,7 +32,6 @@ public class Birthday {
                 "id=" + id +
                 ", mDate='" + mDate + '\'' +
                 ", mName='" + mName + '\'' +
-                ", mImageId=" + mImageId +
                 '}';
     }
 
@@ -63,11 +59,4 @@ public class Birthday {
         this.mDate = date;
     }
 
-    public int getmImageId() {
-        return mImageId;
-    }
-
-    public void setmImageId(int mImageId) {
-        this.mImageId = mImageId;
-    }
 }

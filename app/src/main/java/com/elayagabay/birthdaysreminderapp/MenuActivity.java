@@ -36,8 +36,8 @@ public class MenuActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mTaskAdapter);
 
 
-        mTaskList.add(new Task(ACT_CALCULATOR, "#"+String.valueOf(mTaskList.size()+1), "1/1/18", R.drawable.calc));
-        mTaskList.add(new Task(ACT_BIRTHDAYS,  "#"+String.valueOf(mTaskList.size()+1), "2/2/18", R.drawable.birthday));
+        mTaskList.add(new Task(ACT_CALCULATOR));
+        mTaskList.add(new Task(ACT_BIRTHDAYS));
 
 
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new RecyclerTouchListener.ClickListener() {

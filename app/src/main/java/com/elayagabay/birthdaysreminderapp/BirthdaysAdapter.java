@@ -24,13 +24,11 @@ public class BirthdaysAdapter extends RecyclerView.Adapter<BirthdaysAdapter.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView personName, birthdate;
-        public ImageView personImage;
 
         public MyViewHolder(ViewGroup view) {
             super(view);
             personName = view.findViewById(R.id.personName);
             birthdate = view.findViewById(R.id.birthdate);
-            personImage = view.findViewById(R.id.personImage);
         }
 
     }
@@ -50,7 +48,6 @@ public class BirthdaysAdapter extends RecyclerView.Adapter<BirthdaysAdapter.MyVi
         Birthday bday = mBirthdayEntityList.get(position);
         holder.personName.setText(bday.getName());
         holder.birthdate.setText(bday.getDate());
-        holder.personImage.setImageResource(bday.getmImageId());
     }
 
     @Override

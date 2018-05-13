@@ -54,7 +54,6 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
                             "birthday_id INTEGER," +
                             "birth_date VARCHAR(128), " +
                             "person_name VARCHAR(128), " +
-                            "image_id   INTEGER, " +
                             "PRIMARY KEY(birthday_id))"
             );
         }
