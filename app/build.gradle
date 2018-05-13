@@ -52,4 +52,6 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
 
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.3'
+    //jodatime
+    implementation 'joda-time:joda-time:2.9.4'
 }

@@ -1,5 +1,4 @@
 package com.elayagabay.birthdaysreminderapp;
-import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
@@ -9,11 +8,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.util.Calendar;
-import java.util.Date;
 
 public class CreateBirthday extends AppCompatActivity {
     Birthday bday = null;
-    BirthdaysAdapter mBirthdayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,29 +27,21 @@ public class CreateBirthday extends AppCompatActivity {
                 int   year = datePicker.getYear();
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, day);
-                CharSequence s  = DateFormat.format("yyyy-MM-dd", calendar.getTime());
 
+                CharSequence s  = DateFormat.format("yyyy-MM-dd", calendar.getTime());
                 if(!mPersonName.getText().toString().isEmpty()) {
                     bday = new Birthday(name,s.toString());
 
-                    //add the record to db:
+                    //add record to db:
                     BirthdaysDatabase.getInstance(CreateBirthday.this).writeToBirthdays(bday);
-
-                    //on-screen msg
                     Toast.makeText(CreateBirthday.this, "birthday added.", Toast.LENGTH_SHORT).show();
-                  //  mBirthayAdapter.notifyDataSetChanged();
                     finish();
 
                 } else {
                     Toast.makeText(CreateBirthday.this, "please fill in all fields.", Toast.LENGTH_SHORT).show();
                 }
             }
-
-       // mBirthayAdapter.notifyDataSetChanged();
-
     });
     }
-
-
 }
 

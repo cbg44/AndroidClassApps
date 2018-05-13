@@ -43,9 +43,7 @@ public class MenuActivity extends AppCompatActivity {
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                //Task task = mTaskList.get(position);
-                //Toast.makeText(getApplicationContext(), task.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
-                switch(mTaskList.get(position).getTitle()){
+                 switch(mTaskList.get(position).getTitle()){
                     case CALCULATOR:
                         startActivity(new Intent(MenuActivity.this, CalculatorActivity.class));
                         break;

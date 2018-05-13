@@ -16,7 +16,10 @@ public interface BirthdayDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Birthday bdayRecord);
 
-    @Query("SELECT * FROM birthdays ORDER BY birthday DESC")
+
+
+
+    @Query("SELECT * FROM birthdays")
     LiveData<List<Birthday>> loadBirthdays();
 
 
