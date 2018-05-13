@@ -1,10 +1,3 @@
 <resources>
     <string name="app_name">BirthdaysReminderApp</string>
-    <string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behavior</string>
-    <string name="happyBirthday">Happy Birthday !</string>
-    <string name="bdayName">What\'s your name?</string>
-    <string name="bdayDone">Done</string>
-    <string name="emptyFields">Please fill any empty fields</string>
-    <string name="success">Success!</string>
-    <string name="nobody_has_birthday">\"Nobody here :( Maybe add some?\"</string>
 </resources>

@@ -17,8 +17,8 @@ public class MenuActivity extends AppCompatActivity {
     private TaskAdapter mTaskAdapter;
 
 
-    public static final String ACT_CALCULATOR = "Simple Calculator";
-    public static final String ACT_BIRTHDAYS = "Birthday List";
+    public static final String CALCULATOR = "Calculator";
+    public static final String BIRTHDAYS = "Birthdays Reminder";
 
 
     @Override
@@ -36,20 +36,18 @@ public class MenuActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mTaskAdapter);
 
 
-        mTaskList.add(new Task(ACT_CALCULATOR));
-        mTaskList.add(new Task(ACT_BIRTHDAYS));
+        mTaskList.add(new Task(CALCULATOR));
+        mTaskList.add(new Task(BIRTHDAYS));
 
 
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                //Task task = mTaskList.get(position);
-                //Toast.makeText(getApplicationContext(), task.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
                 switch(mTaskList.get(position).getTitle()){
-                    case ACT_CALCULATOR:
+                    case CALCULATOR:
                         startActivity(new Intent(MenuActivity.this, CalculatorActivity.class));
                         break;
-                    case ACT_BIRTHDAYS:
+                    case BIRTHDAYS:
                         System.out.println("BIRTHDAY");
                         startActivity(new Intent(MenuActivity.this, BirthdaysActivity.class));
                         break;

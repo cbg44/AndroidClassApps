@@ -3,9 +3,6 @@ package com.elayagabay.birthdaysreminderapp;
 public class Task {
     private String mTitle;
 
-    public Task() {
-    }
-
     public Task(String title) {
         this.mTitle = title;
     }

@@ -20,7 +20,7 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
             if (instance == null) {
 
                 instance = Room.databaseBuilder(context.getApplicationContext(),
-                        BirthdaysDatabase.class, QueryHolder.DB_NAME)
+                        BirthdaysDatabase.class, "db_bdays.db")
                         .addMigrations(MIGRATION_1_2) // placeholder for future db versions
                         .build();
             }
@@ -44,8 +44,8 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
         }).start();
     }
 
-    //use full queries instead of constants representing them (due to android dev. docs for migration)
-    //see here: https://developer.android.com/training/data-storage/room/migrating-db-versions
+
+
     static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {

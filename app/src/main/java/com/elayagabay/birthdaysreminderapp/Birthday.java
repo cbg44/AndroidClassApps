@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 
 
-@Entity(tableName = QueryHolder.TABLE_NAME_BDS)
+@Entity(tableName = "birthdays")
 
 public class Birthday {
     @PrimaryKey(autoGenerate = true)

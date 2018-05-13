@@ -1,19 +1,13 @@
 package com.elayagabay.birthdaysreminderapp;
-
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import junit.framework.Assert;
 import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> implements View.OnClickListener {
     private ArrayList<Task> mTaskList;
-    private RecyclerView mRecyclerView;
 
     public TaskAdapter(ArrayList<Task> tasksList) {
         this.mTaskList = tasksList;
@@ -56,13 +50,5 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
         return mTaskList.size();
     }
 
-    public static int getDrawable(Context context, String name)
-    {
-        Assert.assertNotNull(context);
-        Assert.assertNotNull(name);
-
-        return context.getResources().getIdentifier(name,
-                "drawable", context.getPackageName());
-    }
 
 }
