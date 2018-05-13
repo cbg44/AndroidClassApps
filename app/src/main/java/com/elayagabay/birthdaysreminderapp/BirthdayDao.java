@@ -13,15 +13,18 @@ import java.util.List;
 
 @Dao
 public interface BirthdayDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insert(Birthday bdayRecord);
+
     @Query("SELECT * FROM birthdays ORDER BY birthday DESC")
     LiveData<List<Birthday>> loadBirthdays();
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Birthday bdayRecord);
+
     @Delete
     void deleteBirthday(Birthday birthday);
 
     @Update
     void updateBirthday(Birthday birthday);
+
 
 }

@@ -21,7 +21,7 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
 
                 instance = Room.databaseBuilder(context.getApplicationContext(),
                         BirthdaysDatabase.class, "db_bdays.db")
-                        .addMigrations(MIGRATION_1_2) // placeholder for future db versions
+                        .addMigrations(MIGRATION_1_2)
                         .build();
             }
             return instance;
@@ -29,11 +29,6 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
     }
 
     public abstract BirthdayDao getBirthdayDao();
-
-    public LiveData<List<Birthday>> readBirthdays() {
-        LiveData<List<Birthday>> list = getBirthdayDao().loadBirthdays();
-        return list;
-    }
 
     public void writeToBirthdays(final Birthday bday) {
         new Thread(new Runnable() {
@@ -43,6 +38,12 @@ public abstract class BirthdaysDatabase extends RoomDatabase{
             }
         }).start();
     }
+
+    public LiveData<List<Birthday>> readBirthdays() {
+        LiveData<List<Birthday>> list = getBirthdayDao().loadBirthdays();
+        return list;
+    }
+
 
 
 
