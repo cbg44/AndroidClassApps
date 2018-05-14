@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> implements View.OnClickListener {
-    private ArrayList<Task> mTaskList;
+public class ExerciseRecycler extends RecyclerView.Adapter<ExerciseRecycler.MyViewHolder> implements View.OnClickListener {
+    private ArrayList<Exercise> mExerciseList;
 
-    public TaskAdapter(ArrayList<Task> tasksList) {
-        this.mTaskList = tasksList;
+    public ExerciseRecycler(ArrayList<Exercise> tasksList) {
+        this.mExerciseList = tasksList;
 
     }
 
@@ -41,13 +41,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Task task = mTaskList.get(position);
-        holder.name.setText(task.getTitle());
+        Exercise exercise = mExerciseList.get(position);
+        holder.name.setText(exercise.getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return mTaskList.size();
+        return mExerciseList.size();
     }
 
 

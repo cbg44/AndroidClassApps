@@ -1,9 +1,9 @@
 package com.elayagabay.birthdaysreminderapp;
 
-public class Task {
+public class Exercise {
     private String mTitle;
 
-    public Task(String title) {
+    public Exercise(String title) {
         this.mTitle = title;
     }
 
