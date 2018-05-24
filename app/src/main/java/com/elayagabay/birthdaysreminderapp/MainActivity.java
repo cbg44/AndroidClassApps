@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String CALCULATOR = "Calculator";
     public static final String BIRTHDAYS = "Birthdays Reminder";
+    public static final String ANIMATION = "Animation";
 
 
     @Override
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         mExerciseList.add(new Exercise(CALCULATOR));
         mExerciseList.add(new Exercise(BIRTHDAYS));
+        mExerciseList.add(new Exercise(ANIMATION));
 
 
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new RecyclerTouchListener.ClickListener() {
@@ -52,15 +54,16 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("BIRTHDAY");
                         startActivity(new Intent(MainActivity.this, BirthdaysActivity.class));
                         break;
+                    case ANIMATION:
+                        System.out.println("ANIMATION");
+                        startActivity(new Intent(MainActivity.this, Animation.class));
                     default:
                         break;
                 }
             }
 
             @Override
-            public void onLongClick(View view, int position) {
-
-            }
+            public void onLongClick(View view, int position) { }
         }));
 
         mExerciseRecycler.notifyDataSetChanged();

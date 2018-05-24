@@ -19,6 +19,8 @@
         <activity android:name=".CalculatorActivity"></activity>
         <activity android:name=".BirthdaysActivity"></activity>
         <activity android:name=".CreateBirthday"></activity>
+        <activity android:name=".Animation"></activity>
+
     </application>
 
 </manifest>
