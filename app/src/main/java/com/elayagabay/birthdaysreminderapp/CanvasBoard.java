@@ -45,12 +45,13 @@ public class CanvasBoard extends View {
             int color = Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
             Circle circle = new Circle(color);
        //   circle.move();
-            circle.setCoordination(100 ,100,35);
-            circle.setSpeed(random.nextInt(50 - 5) + 5, random.nextInt(50 - 10) +10);
+            circle.setCoordination(100 ,100,90);
+            circle.setSpeed(random.nextInt(100), random.nextInt(100));
             circleList.add(circle);
             onSizeChanged(xMax, yMax , xLast, yLast);
-            return true;
+        } else {
+            return false;
         }
-        return false;
+        return true;
     }
 }

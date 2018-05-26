@@ -3,31 +3,33 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import java.util.Random;
+
 public class Circle {
-    private float leftTopX;
-    private float leftTopY;
+    private float xTop;
+    private float yTop;
     private int radius;
     private Paint paint;
-    private RectF bounds;
+    private RectF rectF;
     private int speedX;
     private int speedY;
 
     public Circle(int color) {
         this.paint = new Paint();
         paint.setColor(color);
-        bounds = new RectF();
+        rectF = new RectF();
     }
 
     public void draw(Canvas canvas){
-        canvas.drawOval(bounds,paint);
-        update(canvas);
+        canvas.drawOval(rectF,paint);
+        move(canvas);
     }
 
     public void setCoordination(float x, float y, int radius){
-        this.leftTopX = x;
-        this.leftTopY = y;
+        this.xTop = x;
+        this.yTop = y;
         this.radius = radius;
-        bounds.set(this.leftTopX,this.leftTopY,this.leftTopX+ this.radius*2,this.leftTopY+this.radius*2);
+        rectF.set(this.xTop,this.yTop,this.xTop+ this.radius,this.yTop+this.radius);
     }
 
     public void setSpeed(int spdX, int spdY){
@@ -35,32 +37,24 @@ public class Circle {
         this.speedY = spdY;
     }
 
-    private void update(Canvas canvas) {
-        if(leftTopX >= canvas.getWidth() - 100){
-            speedX = -5;
+    private void move(Canvas canvas) {
+        Random random = new Random();
+        if(xTop >= canvas.getWidth() - 100){
+            speedX = random.nextInt(10) - 15;
         }
-        if(leftTopX <= 0) {
-            speedX = 5;
+        if(xTop <= 0) {
+            speedX = random.nextInt(10);
         }
-        if(leftTopY >= canvas.getHeight()- 100){
-            speedY = -5;
-        }
-
-        if(leftTopY <= 0) {
-            speedY = 5;
-        }
-        if((leftTopX >= 345 && leftTopX <= 905) && ((leftTopY >= 500 &&  leftTopY<=1000)))
-        {
-            speedX *= -1;
+        if(yTop >= canvas.getHeight()- 100){
+            speedY = random.nextInt(10) - 15;
         }
 
-        if((leftTopX >= 350 && leftTopX <= 900) && ((leftTopY >= 495 && leftTopY <=1005)))
-        {
-            speedY *= -1;
+        if(yTop <= 0) {
+            speedY = random.nextInt(10);
         }
-        leftTopX += speedX;
-        leftTopY += speedY;
 
-        bounds.set(leftTopX , leftTopY , leftTopX + 2 * radius , leftTopY + 2 * radius);
+        xTop += speedX;
+        yTop += speedY;
+        rectF.set(xTop,yTop,xTop+radius,yTop+radius);
     }
 }
