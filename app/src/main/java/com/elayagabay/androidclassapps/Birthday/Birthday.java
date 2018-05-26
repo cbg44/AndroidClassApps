@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps.Birthday;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

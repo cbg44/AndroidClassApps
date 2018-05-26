@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

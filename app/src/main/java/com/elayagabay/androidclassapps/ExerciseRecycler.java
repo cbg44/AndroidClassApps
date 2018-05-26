@@ -1,9 +1,12 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.elayagabay.androidcassapps.R;
+
 import java.util.ArrayList;
 
 public class ExerciseRecycler extends RecyclerView.Adapter<ExerciseRecycler.MyViewHolder> implements View.OnClickListener {

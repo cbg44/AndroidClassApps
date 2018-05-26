@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps.Birthday;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.elayagabay.androidcassapps.R;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;

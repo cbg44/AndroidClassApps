@@ -1,8 +1,7 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps.Animation;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-
 import java.util.Random;
 
 public class Circle {

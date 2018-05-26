@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps;
 
 public class Exercise {
     private String mTitle;

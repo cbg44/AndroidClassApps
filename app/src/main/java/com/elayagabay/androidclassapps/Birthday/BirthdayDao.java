@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps.Birthday;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;

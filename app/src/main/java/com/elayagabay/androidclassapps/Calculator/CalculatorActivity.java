@@ -1,7 +1,9 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps.Calculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.elayagabay.androidcassapps.R;
 
 public class CalculatorActivity  extends AppCompatActivity{
     @Override

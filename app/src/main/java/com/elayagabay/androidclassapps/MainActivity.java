@@ -1,4 +1,4 @@
-package com.elayagabay.birthdaysreminderapp;
+package com.elayagabay.androidclassapps;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.elayagabay.androidclassapps.Birthday.BirthdaysActivity;
+import com.elayagabay.androidclassapps.Calculator.CalculatorActivity;
+import com.elayagabay.androidclassapps.Animation.Animation;
+import com.elayagabay.androidcassapps.R;
 
 import java.util.ArrayList;
 

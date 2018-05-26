@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.elayagabay.birthdaysreminderapp">
+    package="com.elayagabay.androidcassapps">
 
     <application
         android:allowBackup="true"
@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.elayagabay.androidclassapps.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalculatorActivity"></activity>
-        <activity android:name=".BirthdaysActivity"></activity>
-        <activity android:name=".CreateBirthday"></activity>
-        <activity android:name=".Animation"></activity>
+        <activity android:name="com.elayagabay.androidclassapps.Calculator.CalculatorActivity"></activity>
+        <activity android:name="com.elayagabay.androidclassapps.Birthday.BirthdaysActivity"></activity>
+        <activity android:name="com.elayagabay.androidclassapps.Birthday.CreateBirthday"></activity>
+        <activity android:name="com.elayagabay.androidclassapps.Animation.Animation"></activity>
 
     </application>
 
